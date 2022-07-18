@@ -1,4 +1,3 @@
-import 'package:adopet/constants/Cores.dart';
 import 'package:adopet/screens/firstScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: "Poppins",
         primarySwatch: Colors.blue,
       ),
-      home: firstScreen(),
+      home: const FirstScreen(),
     );
   }
 }
