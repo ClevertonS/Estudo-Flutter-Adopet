@@ -1,13 +1,10 @@
-import 'dart:ui';
-import 'package:adopet/widgets/backgrounds/backgroundScreen1.dart';
+import 'package:adopet/screens/login_screen.dart';
+import 'package:adopet/widgets/backgrounds/background_first_screen.dart';
 import 'package:adopet/widgets/button.dart';
 import 'package:adopet/widgets/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:adopet/constants/Cores.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -19,9 +16,9 @@ class FirstScreen extends StatelessWidget {
       Container(
         color: Cores.azul,
       ),
-      const BackgroundClipperFirstScreen(),
+      const BackgroundSvgFirstScreen(),
       Center(
-        heightFactor: 0.85,
+        heightFactor: 0.82,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -43,20 +40,27 @@ class FirstScreen extends StatelessWidget {
                     textAlign: TextAlign.center),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 16),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
               child: Button(
-                child: TextoH2(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const LoginScreen())));
+                },
+                child: const TextoH2(
                   value: "Já tenho conta",
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ),
-            const Button(
-                child: TextoH2(
-              value: "Quero me cadastrar",
-              fontWeight: FontWeight.w600,
-            ))
+            Button(
+                onPressed: () {},
+                child: const TextoH2(
+                  value: "Quero me cadastrar",
+                  fontWeight: FontWeight.w600,
+                ))
           ],
         ),
       ),
